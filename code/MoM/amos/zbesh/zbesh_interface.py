@@ -1,4 +1,5 @@
 import os.path
+import numpy as np
 from scipy import weave, special, Numeric
 from Numeric import *
 from weave import converters
@@ -9,7 +10,7 @@ def zbesh_interface(z_cmplx, fnu):
 	M = 2
 	N = 1
 	h_scipy = hankel2(fnu, z_cmplx)
-	h_cpp = zeros(1, Complex)
+	h_cpp = np.zeros(1, np.complex128)
 	nz = 0
 	ierr = 0
 	wrapping_code = """

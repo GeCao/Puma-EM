@@ -4,7 +4,7 @@ try:
 except ImportError:
     import pickle as cPickle
 from mpi4py import MPI
-from scipy import array
+from numpy import array
 from ReadWriteBlitzArray import writeASCIIBlitzArrayToDisk, writeScalarToDisk
 from meshClass import CubeClass
 

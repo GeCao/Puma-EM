@@ -7,7 +7,7 @@ from mpi4py import MPI
 from FMM_precond import Mg_CSR
 from assemble_Z_near import Z_nearCRS_Assembling
 from ReadWriteBlitzArray import writeASCIIBlitzArrayToDisk
-from scipy import array
+from numpy import array
 
 def compute_SAIpreconditioner(tmpDirName, C, chunkNumber_to_cubesNumbers, cubeNumber_to_chunkNumber, chunkNumber_to_processNumber, processNumber_to_ChunksNumbers, MAX_BLOCK_SIZE):
     my_id = MPI.COMM_WORLD.Get_rank()

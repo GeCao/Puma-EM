@@ -1,5 +1,5 @@
 # from Numeric import *
-from scipy import *
+import numpy as np
 from scipy import weave
 import weave
 from scipy import linalg
@@ -22,20 +22,20 @@ def multiplyAndSum(A, B):
 
 if __name__=="__main__":
     N = 500
-    A = rand(2, N, 2*N)
-    B = rand(2, N, 2*N)
+    A = np.random.rand(2, N, 2*N)
+    B = np.random.rand(2, N, 2*N)
     t0 = time.time()
     multiplyAndSum(A, B)
     print(time.time() - t0, "seconds...")
 
-    A = rand(2, 2*N*N)
-    B = rand(2, 2*N*N)
+    A = np.random.rand(2, 2*N*N)
+    B = np.random.rand(2, 2*N*N)
     t0 = time.time()
     multiplyAndSum(A, B)
     print(time.time() - t0, "seconds...")
 
-    A = rand(2*N*N, 2)
-    B = rand(2*N*N, 2)
+    A = np.random.rand(2*N*N, 2)
+    B = np.random.rand(2*N*N, 2)
     t0 = time.time()
     multiplyAndSum(A, B)
     print(time.time() - t0, "seconds...")

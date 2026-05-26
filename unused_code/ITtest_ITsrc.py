@@ -1,5 +1,5 @@
 import os.path
-from scipy import *
+from numpy import zeros, array, pi, reshape, arange, sqrt, complex64, float64
 from scipy import weave
 from weave import converters
 from EM_constants import *
@@ -65,13 +65,13 @@ def ITtest_ITsrc_FS(vertexes_coord, triangles_vertexes, index_test_triangle, ind
     # the 4 scalar quantities computed by ITo_ITs_free will be placed in a vector,
     # which is "scalar_ITtest_ITsrc_G". This is because we cannot change scalar complex
     # variables defined in Python and passed to C++ without the "return_val" mechanism
-    scalar_ITtest_ITsrc_G = zeros(4, Complex64)
-    ITtest_r_ITsrc_G = zeros(3, Complex64)
-    ITtest_ITsrc_G_rprime = zeros(3, Complex64)
-    ITtest_n_hat_X_r_ITsrc_G = zeros(3, Complex64)
-    ITtest_ITsrc_grad_G = zeros(3, Complex64)
-    ITtest_r_X_ITsrc_grad_G = zeros(3, Complex64)
-    ITtest_n_hat_X_r_X_ITsrc_grad_G = zeros(3, Complex64)
+    scalar_ITtest_ITsrc_G = zeros(4, complex64)
+    ITtest_r_ITsrc_G = zeros(3, complex64)
+    ITtest_ITsrc_G_rprime = zeros(3, complex64)
+    ITtest_n_hat_X_r_ITsrc_G = zeros(3, complex64)
+    ITtest_ITsrc_grad_G = zeros(3, complex64)
+    ITtest_r_X_ITsrc_grad_G = zeros(3, complex64)
+    ITtest_n_hat_X_r_X_ITsrc_grad_G = zeros(3, complex64)
 
     wrapping_code = """
     using namespace blitz;
@@ -114,8 +114,8 @@ if __name__=="__main__":
     w = 2*pi*f
 
     test_triangles_vertexes = src_triangles_vertexes = reshape(arange(3),(1,-1))
-    test_vertexes_coord = array([[-0.02, 0, 0], [0, 0, 0], [0, 0.03, 0]],Float)
-    src_vertexes_coord = array([ [0.03, 0, 0], [0.04, 0, 0], [0.04, 0.02, 0]],Float)
+    test_vertexes_coord = array([[-0.02, 0, 0], [0, 0, 0], [0, 0.03, 0]],float64)
+    src_vertexes_coord = array([ [0.03, 0, 0], [0.04, 0, 0], [0.04, 0.02, 0]],float64)
 
 #     ITtest_ITsrc_G, ITtest_r_ITsrc_G, ITtest_ITsrc_G_rprime, ITtest_r_dot_ITsrc_G_rprime, ITtest_n_hat_X_r_ITsrc_G, ITtest_n_hat_X_r_dot_ITsrc_G_rprime, ITtest_ITsrc_grad_G, ITtest_r_X_ITsrc_grad_G, ITtest_n_hat_X_r_dot_r_X_ITsrc_grad_G, ITtest_n_hat_X_r_X_ITsrc_grad_G = ITtest_ITsrc_FS(test_vertexes_coord, test_triangles_vertexes, src_vertexes_coord, src_triangles_vertexes, w, eps_r, mu_r, N_points_o, N_points_s, EXTRACT_1_R, EXTRACT_R)
 #
@@ -125,9 +125,9 @@ if __name__=="__main__":
 #
 # 	print j
 
-    vertexes_coord = zeros((6, 3), Float)
-    vertexes_coord[:3, :] = array([[-0.02, 0, 0], [0, 0, 0], [0, 0.03, 0]],Float)
-    vertexes_coord[3:, :] = array([ [0.03, 0, 0], [0.04, 0, 0], [0.04, 0.02, 0]],Float)
+    vertexes_coord = zeros((6, 3), float64)
+    vertexes_coord[:3, :] = array([[-0.02, 0, 0], [0, 0, 0], [0, 0.03, 0]],float64)
+    vertexes_coord[3:, :] = array([ [0.03, 0, 0], [0.04, 0, 0], [0.04, 0.02, 0]],float64)
     triangles_vertexes = reshape(arange(6), (2, -1))
     index_test_triangle = 0
     index_src_triangle = 1

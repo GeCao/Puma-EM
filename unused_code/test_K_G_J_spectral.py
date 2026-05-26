@@ -1,4 +1,4 @@
-from scipy import *
+from numpy import size, sqrt, zeros, pi, array, searchsorted
 from weave import converters
 
 def K_G_J_spectral(k_rho, v, rho, z, zprime, w, eps_0, mu_0, z_i, mu_i, eps_i):

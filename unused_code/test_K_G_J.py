@@ -1,4 +1,4 @@
-from scipy import *
+from numpy import size, sqrt, zeros, array, pi, arange
 from weave import converters
 
 def K_G_J(rho, z, zprime, w, eps_0, mu_0, z_i, mu_i, eps_i):

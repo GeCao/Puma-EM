@@ -1,5 +1,5 @@
 import os.path, time, sys
-from scipy import arange, array, zeros, ones, reshape, take, put, sqrt, sum
+from numpy import arange, array, zeros, ones, reshape, take, put, sqrt, sum
 try:
     from scipy import weave
     from scipy.weave import converters

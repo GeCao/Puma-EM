@@ -1,7 +1,7 @@
 from mpi4py import *
 #MPI.Init()
 import sys, os
-from scipy import zeros, ones, sqrt, array, arange, dot
+from numpy import zeros, ones, sqrt, array, arange, dot
 from MLFMA import run_MLFMA
 from PyGmsh import executeGmsh, write_geo
 from EM_constants import *

@@ -1,10 +1,10 @@
-from scipy import rand, product
+import numpy as np
 try:
     from scipy import weave
     from scipy.weave import converters
 except ImportError:
     pass
-from scipy import zeros, array, arange
+from numpy import zeros, array, arange
 import time
 from mpi4py import MPI
 
@@ -77,7 +77,7 @@ if __name__=="__main__":
     #print("time for reading Binary Array =", time_readBinaryArray)
 
     #createZ_sparse_MLFMA(0)
-    sendbuf = rand(3,3).tolist()
+    sendbuf = np.random.rand(3,3).tolist()
     recvbuf = zeros(3).tolist()
     #MPI.Init()
     status = MPI.Status()

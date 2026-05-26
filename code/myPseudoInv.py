@@ -1,5 +1,6 @@
 import sys, os
-from scipy import conj, array, zeros, rand, eye, dot, floor, transpose, real, imag, triu
+import numpy as np
+from numpy import conj, array, zeros, eye, dot, floor, transpose, real, imag, triu
 try:
     from scipy import weave
     from scipy.weave import converters
@@ -147,7 +148,7 @@ if __name__=="__main__":
 
     N = 3
     M = 3
-    A0 = triu(rand(M, N) + 1.j * rand(M, N))
+    A0 = triu(np.random.rand(M, N) + 1.j * np.random.rand(M, N))
     A1 = copy.deepcopy(A0)
     A2 = zeros((M, N), 'D', 2)
     A2[:] = A0

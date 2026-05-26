@@ -9,7 +9,7 @@ try:
 except ImportError:
     import pickle as cPickle
 from mpi4py import MPI
-from scipy import zeros, floor, array
+from numpy import zeros, floor, array
 from ReadWriteBlitzArray import writeScalarToDisk, writeASCIIBlitzArrayToDisk, readASCIIBlitzIntArray2DFromDisk, writeBlitzArrayToDisk
 
 def Z_near_size_computation(cubes_lists_edges_numbers, cubes_lists_NeighborsIndexes):

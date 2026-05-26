@@ -1,5 +1,5 @@
 import sys
-from scipy import zeros
+from numpy import zeros
 from scipy import weave
 from scipy.weave import converters
 

@@ -1,7 +1,7 @@
 import os, sys
 from math import pi
-from scipy import zeros, array, arange, dot
-from scipy import sparse, linalg, cos, sin, conj, log10, real, sum, imag
+from numpy import zeros, array, arange, dot, cos, sin, conj, log10, real, sum, imag
+from scipy import sparse, linalg
 from scipy.sparse.linalg import bicgstab
 from meshClass import MeshClass
 from PyGmsh import executeGmsh, write_geo
